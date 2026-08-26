@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 function App() {
   const [students, setStudents] = useState([
@@ -22,7 +22,6 @@ function App() {
     <div style={{ padding: '30px', fontFamily: 'Arial', maxWidth: '500px', margin: '0 auto' }}>
       <h2>Quản Lý Danh Sách Sinh Viên</h2>
       
-      {/* Form nhập dữ liệu */}
       <form onSubmit={handleAddStudent} style={{ marginBottom: '20px', background: '#f4f4f4', padding: '15px', borderRadius: '5px' }}>
         <div style={{ marginBottom: '10px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>MSSV:</label>
@@ -49,7 +48,6 @@ function App() {
         </button>
       </form>
 
-      {/* Danh sách hiển thị */}
       <h3>Danh Sách Hiện Tại:</h3>
       <ul>
         {students.map((stu, index) => (
@@ -62,5 +60,4 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+ReactDOM.render(<App />, document.getElementById('root'));
